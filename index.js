@@ -14,6 +14,18 @@ const app = express()
 const uri = process.env.DB_URL
 
 const options = {useNewUrlParser: true, };
+var corsOptions = {
+  origin: 'https://phone-book-vue-v5cv.vercel.app'
+}
+
+// Middleware
+app.use(cors(corsOptions))
+app.use(morgan('tiny'))
+app.use(express.json())
+app.use(express.text())
+// application/x-www-form-urlencoded
+app.use(express.urlencoded({ extended: true }))
+//app.use(express.static(path.join(__dirname, 'public')))
 
 mongoose.connect(uri, options).then(
   /** ready to use. The `mongoose.connect()` promise resolves to mongoose instance. */
@@ -25,14 +37,7 @@ mongoose.connect(uri, options).then(
 
 
 
-// Middleware
-app.use(cors())
-app.use(morgan('tiny'))
-app.use(express.json())
-app.use(express.text())
-// application/x-www-form-urlencoded
-app.use(express.urlencoded({ extended: true }))
-//app.use(express.static(path.join(__dirname, 'public')))
+
 
 //Routes
 app.get('/', (req, res) => {
