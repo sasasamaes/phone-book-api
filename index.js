@@ -35,13 +35,17 @@ app.use(express.urlencoded({ extended: true }))
 //app.use(express.static(path.join(__dirname, 'public')))
 
 //Routes
+app.get('/', (req, res) => {
+  res.sendFile('index.html', {root: path.join(__dirname, 'public')});
+})
 app.use('/api', userRouter);  
 app.use('/api', loginRouter);  
 app.use('/api', contactRouter);  
 
 
 app.use(history());
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static('public'))
+// app.use(express.static(path.join(__dirname, 'public')));
 
 app.set('port', process.env.PORT || 3000)
 
