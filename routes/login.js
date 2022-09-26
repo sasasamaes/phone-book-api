@@ -35,7 +35,7 @@ router.post(prefix, async (req, res) => {
       'secret',
       { expiresIn: 60 * 60 * 24 * 30 },
     ) // Expires in 30 days
-
+    res.setHeader("Content-Type", "application/json")
     // passed the validations
     return res.status(202).json({
       result: userDB,

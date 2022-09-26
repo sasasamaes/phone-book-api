@@ -50,7 +50,7 @@ router.put(`${prefix}/:id`,(req, res, next)=> checkAuth(req, res, next), async(r
    
     const userDB = await User.findByIdAndUpdate(id, body, {new: true, runValidators: true});
 
-
+    res.setHeader("Content-Type", "application/json")
     return res.status(202).json({
       result: userDB
     });
