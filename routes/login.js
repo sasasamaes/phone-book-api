@@ -1,7 +1,7 @@
-import express from 'express'
-import User from '../models/user.js'
-import bcrypt from 'bcrypt'
-import jwt from 'jsonwebtoken'
+const express = require('express')
+const User  = require('../models/user.js')
+const bcrypt  = require('bcrypt')
+const jwt  = require('jsonwebtoken')
 
 const router = express.Router()
 const prefix = '/login'

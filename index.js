@@ -1,13 +1,13 @@
-import express from 'express';
-import morgan from 'morgan';
-import cors from 'cors';
-import dotenv from 'dotenv';
-import path from 'path';
-import mongoose from 'mongoose';
-import history from 'connect-history-api-fallback';
-import userRouter from './routes/user.js'
-import loginRouter from './routes/login.js'
-import contactRouter from './routes/contact.js';
+const express = require('express')
+const morgan = require('morgan')
+const cors = require('cors')
+const dotenv = require('dotenv')
+const path = require('path')
+const mongoose = require('mongoose')
+const history = require('connect-history-api-fallback')
+const userRouter = require('./routes/user.js')
+const loginRouter = require('./routes/login.js')
+const contactRouter = require('./routes/contact.js')
 
 dotenv.config()
 const app = express()

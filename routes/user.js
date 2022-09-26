@@ -1,8 +1,8 @@
-import express from 'express'
-import _ from 'underscore'
-import User from '../models/user.js';
-import bcrypt from 'bcrypt'
-import checkAuth from '../middlewares/auth.js'
+const express = require('express')
+const _ = require('underscore')
+const User = require('../models/user.js')
+const bcrypt = require('bcrypt')
+const checkAuth = require('../middlewares/auth.js')
 
 const router = express.Router();
 // Hash Password

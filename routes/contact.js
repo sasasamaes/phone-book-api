@@ -1,8 +1,8 @@
-import express from 'express';
+const express = require('express');
 // Middlewares
-import checkAuth from '../middlewares/auth.js'
+const checkAuth  = require('../middlewares/auth.js')
 // Models
-import Contact from '../models/contact.js';
+const Contact  = require('../models/contact.js')
 
 const router = express.Router();
 

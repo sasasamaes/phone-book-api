@@ -1,4 +1,4 @@
-import jwt from 'jsonwebtoken'
+const jwt = require('jsonwebtoken')
 
 let checkAuth = (req, res, next) => {
   // headers
@@ -18,5 +18,5 @@ let checkAuth = (req, res, next) => {
   })
 }
 
-export default checkAuth
+module.exports = checkAuth
 
