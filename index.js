@@ -15,7 +15,7 @@ const uri = process.env.DB_URL
 
 const options = {useNewUrlParser: true, };
 var corsOptions = {
-  origin: 'https://phone-book-vue-v5cv.vercel.app'
+  origin: '*'
 }
 
 // Middleware
