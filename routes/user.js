@@ -64,4 +64,4 @@ router.put(`${prefix}/:id`,(req, res, next)=> checkAuth(req, res, next), async(r
 
 });
 
-export default router
+module.exports = router

@@ -48,4 +48,4 @@ router.post(prefix, async (req, res) => {
   }
 })
 
-export default router
+module.exports = router
