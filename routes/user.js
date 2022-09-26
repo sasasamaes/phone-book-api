@@ -1,8 +1,8 @@
 import express from 'express'
 import _ from 'underscore'
-import User from '../models/user';
+import User from '../models/user.js';
 import bcrypt from 'bcrypt'
-import { checkAuth } from '../middlewares/auth.js'
+import checkAuth from '../middlewares/auth.js'
 
 const router = express.Router();
 // Hash Password

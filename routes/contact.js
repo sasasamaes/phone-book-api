@@ -1,7 +1,6 @@
 import express from 'express';
 // Middlewares
 import checkAuth from '../middlewares/auth.js'
-import headers from '../middlewares/headers.js'
 // Models
 import Contact from '../models/contact.js';
 
