@@ -10,7 +10,7 @@ const saltRounds = 10;
 const prefix = '/user'
 
 router.post(prefix,async (req, res) => {
-
+  res.header("Access-Control-Allow-Origin", "*");
   const body = {
     firstName: req.body.firstName,
     lastName: req.body.lastName,
@@ -38,7 +38,7 @@ router.post(prefix,async (req, res) => {
 });
 
 router.put(`${prefix}/:id`,(req, res, next)=> checkAuth(req, res, next), async(req, res) => {
-
+  res.header("Access-Control-Allow-Origin", "*");
   let id = req.params.id;
 
   let body = _.pick(req.body, ['firstName', 'lastName','email', 'phone', 'pass']);

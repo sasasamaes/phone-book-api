@@ -9,6 +9,7 @@ const router = express.Router();
 // router.use((req, res, next)= authenticateJWT(req, res, next))
 // Get with parameters
 router.get('/contact/:id', async(req, res) => {
+  res.header("Access-Control-Allow-Origin", "*");
   const _id = req.params.id;
   try {
     const contactDB = await Contact.findOne({_id});
@@ -25,6 +26,7 @@ router.get('/contact/:id', async(req, res) => {
 
 //Get with pagination
 router.get('/contact',checkAuth ,async(req, res) => {
+  res.header("Access-Control-Allow-Origin", "*");
   const userId = req.user._id
 
   const queryLimit = Number(req.query.limit) || 5;
@@ -54,6 +56,7 @@ router.get('/contact',checkAuth ,async(req, res) => {
 });
 
 router.post('/contact',checkAuth, async(req, res) => {
+  res.header("Access-Control-Allow-Origin", "*");
   const body = req.body;  
   console.log(req.user);
   body.userId = req.user._id;
@@ -72,6 +75,7 @@ router.post('/contact',checkAuth, async(req, res) => {
 });
 
 router.delete('/contact/:id',checkAuth, async(req, res) => {
+  res.header("Access-Control-Allow-Origin", "*");
   const _id = req.params.id;
   try {
     const contactDB = await Contact.findByIdAndDelete({_id});
@@ -93,6 +97,7 @@ router.delete('/contact/:id',checkAuth, async(req, res) => {
 });
 
 router.put('/contact/:id', async(req, res) => {
+  res.header("Access-Control-Allow-Origin", "*");
   const _id = req.params.id;
   const body = req.body;
   try {

@@ -7,6 +7,7 @@ const router = express.Router()
 const prefix = '/login'
 
 router.post(prefix, async (req, res) => {
+  res.header("Access-Control-Allow-Origin", "*");
   let body = req.body
 
   try {
