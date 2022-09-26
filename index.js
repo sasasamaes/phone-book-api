@@ -15,7 +15,7 @@ const uri = process.env.DB_URL
 
 const options = {useNewUrlParser: true, };
 var corsOptions = {
-  origin: '*'
+  origin: ['*', 'https://phone-book-vue-v5cv.vercel.app'] ,
 }
 
 // Middleware
@@ -40,6 +40,18 @@ mongoose.connect(uri, options).then(
 
 
 //Routes
+app.use((req, res, next) => {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Content-Type,Content-Length, Authorization, Accept,X-Requested-With");
+  res.header("Access-Control-Allow-Methods", "PUT,POST,GET,DELETE,OPTIONS");
+  res.setHeader("Access-Control-Allow-Origin", "https://phone-book-vue-v5cv.vercel.app");
+  res.header(
+      "Access-Control-Allow-Headers",
+      "Origin, X-Requested-With, Content-Type, Accept"
+  );
+  next();
+});
+
 app.get('/', (req, res) => {
   res.sendFile('index.html', {root: path.join(__dirname, 'public')});
 })
