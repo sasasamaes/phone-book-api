@@ -53,4 +53,3 @@ app.listen(app.get('port'), function () {
   console.log(`Listening on the port ${app.get('port')}`)
 })
 
-module.exports = app
