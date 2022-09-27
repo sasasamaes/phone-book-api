@@ -55,7 +55,7 @@ router.get('/contact', checkAuth, async (req, res) => {
   }
 })
 
-router.post('/contact', checkAuth, async (req, res) => {
+router.post('/contact', async (req, res) => {
   res.header('Access-Control-Allow-Origin', '*')
   const body = req.body
   console.log(req.user)
@@ -75,7 +75,7 @@ router.post('/contact', checkAuth, async (req, res) => {
   }
 })
 
-router.delete('/contact/:id', checkAuth, async (req, res) => {
+router.delete('/contact/:id', async (req, res) => {
   res.header('Access-Control-Allow-Origin', '*')
   const _id = req.params.id
   try {
